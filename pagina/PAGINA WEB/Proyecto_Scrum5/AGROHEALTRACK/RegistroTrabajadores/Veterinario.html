@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - Veterinario</title>
+    <link rel="stylesheet" href="estilos_7.css">
+</head>
+<body>
+    <header>
+        <h1>AGROHEALTRACK</h1>
+        <p>Configuración del Veterinario</p>
+    </header>
+
+    <main>
+        <section class="configuracion">
+            <h2>Configuración</h2>
+            <!-- Formulario de configuración -->
+            <form class="formulario" method="POST" action="../Php/veterinario/procesar_veterinario.php">
+
+                <!-- Campo de Especialidad -->
+                <div class="campo">
+                    <label for="especialidad">Especialidad:</label>
+                    <input type="text" id="especialidad" name="especialidad" required>
+                </div>
+
+                <!-- Campo de Horario de Atención -->
+                <div class="campo">
+                    <label for="horario">Horario de Atención:</label>
+                    <input type="text" id="horario" name="horario" required>
+                </div>
+
+                <!-- Botón de guardar cambios -->
+                <button type="submit" class="boton">Guardar Cambios</button><br>
+            </form>
+
+            <!-- Botón separado para ir al panel -->
+            <a href="../Pagina Principal/control_otros/Panel de  Control.html" class="boton">Panel de control</a>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-contenido">
+            <p>&copy; 2023 AGROHEALTRACK. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

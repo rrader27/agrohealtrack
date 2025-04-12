@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQRS - AGROHEALTRACK</title>
+    <link rel="stylesheet" href="estilos_6.css">
+</head>
+<body>
+    <header>
+        <h1>AGROHEALTRACK</h1>
+    </header><br>
+
+    <main>
+        <section class="pqrs">
+            <h2>PQRS (Peticiones, Quejas, Reclamos y Sugerencias)</h2>
+
+            <!-- Aquí va el mensaje -->
+            <div id="mensaje-alerta" style="display:none; background-color: #e0ffe0; color: #207520; padding: 10px; border: 1px solid #a5d6a7; border-radius: 5px; margin: 20px;">
+            </div>
+
+            <form action="../Php/pqrs/procesar_pqrs.php" method="post">
+                <label for="tipo">Tipo de PQRS:</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="peticion">Petición</option>
+                    <option value="queja">Queja</option>
+                    <option value="reclamo">Reclamo</option>
+                    <option value="sugerencia">Sugerencia</option>
+                </select>
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" rows="5" required></textarea>
+
+                <button type="submit" class="boton">Enviar</button>
+            </form>
+        </section>
+    </main><br>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../../Pagina_incio.html">Inicio</a></li>
+                    <li><a href="../Paginas de Error/error.html">Página de Error</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion">
+                <h3>Contacto</h3>
+                <p>Dirección: Calle 123, Ciudad, País</p>
+                <p>Teléfono: +57 123 456 7890</p>
+                <p>Email: info@agrohealthtrack.com</p>
+            </div>
+            <div class="footer-seccion">
+                <h3>Redes Sociales</h3>
+                <ul>
+                    <li><a href="https://facebook.com/agrohealthtrack" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/agrohealthtrack" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com/agrohealthtrack" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-derechos">
+            <p>&copy; 2023 AGROHEALTRACK. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function obtenerParametro(nombre) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(nombre);
+        }
+
+        const mensaje = obtenerParametro('mensaje');
+        if (mensaje) {
+            const alerta = document.getElementById('mensaje-alerta');
+            alerta.textContent = decodeURIComponent(mensaje);
+            alerta.style.display = 'block';
+
+            setTimeout(() => {
+                alerta.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

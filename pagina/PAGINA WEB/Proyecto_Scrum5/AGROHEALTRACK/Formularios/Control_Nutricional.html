@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Nutricional</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div>
+        <!-- Barra lateral -->
+        <aside>
+            <h2>AGROHEALTRACK</h2>
+            <nav>
+                <a href="../Formularios/Plan_nutricional.html">Plan Nutricional</a>
+                <a href="../Pagina Principal/control_otros/Panel de  Control.html">Panel de Control</a>
+            </nav>
+        </aside>
+
+        <!-- Área principal -->
+        <main>
+            <section>
+                <h1>Control Nutricional</h1>
+                <p>Registra y monitorea el estado de salud de los animales.</p>
+
+                <!-- ✅ Contenedor del mensaje -->
+                <div id="mensaje-alerta" style="display:none; background-color: #e0ffe0; color: #207520; padding: 10px; border: 1px solid #a5d6a7; border-radius: 5px; margin: 20px;"></div>
+
+                <!-- Formulario de gestión de salud -->
+                <form action="../Php/contorlNutricional/Procesar_Control.php" method="POST">
+                    <label for="animal">Selecciona el tipo de animal:</label>
+                    <select id="animal" name="animal" required>
+                        <option value="">-- Selecciona --</option>
+                        <option value="Bovino">Bovino</option>
+                        <option value="Porcino">Porcino</option>
+                    </select>
+                
+                    <label for="diagnostico">Diagnóstico:</label>
+                    <textarea id="diagnostico" name="diagnostico" rows="4" placeholder="Describe el diagnóstico..." required></textarea>
+                
+                    <label for="tratamiento">Tratamiento:</label>
+                    <input type="text" id="tratamiento" name="tratamiento" placeholder="Ej: Medicamentos, terapias..." required>
+                
+                    <button type="submit">Guardar Registro Nutricional</button>
+                </form>             
+            </section>
+        </main>
+    </div>
+
+    <!-- ✅ Script del mensaje -->
+    <script>
+        function obtenerParametro(nombre) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(nombre);
+        }
+
+        const mensaje = obtenerParametro('mensaje');
+        if (mensaje) {
+            const alerta = document.getElementById('mensaje-alerta');
+            alerta.textContent = decodeURIComponent(mensaje);
+            alerta.style.display = 'block';
+
+            // Ocultar después de 4 segundos
+            setTimeout(() => {
+                alerta.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

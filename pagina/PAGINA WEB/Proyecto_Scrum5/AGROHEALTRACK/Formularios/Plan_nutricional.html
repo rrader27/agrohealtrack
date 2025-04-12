@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Nutricional</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div>
+        <!-- Barra lateral -->
+        <aside>
+            <h2>AGROHEALTRACK</h2>
+            <nav>
+                <a href="Control_Nutricional.html">Control Nutricional</a>
+                <a href="../Pagina Principal/control_otros/Panel de  Control.html">Panel de Control</a>
+            </nav>
+        </aside>
+
+        <!-- Área principal -->
+        <main>
+            <section>
+                <h1>Plan Nutricional</h1>
+                <p>Aquí puedes gestionar la dieta y el plan nutricional de los animales.</p>
+
+                <!-- ✅ Contenedor del mensaje -->
+                <div id="mensaje-alerta" style="display:none; background-color: #e0ffe0; color: #207520; padding: 10px; border: 1px solid #a5d6a7; border-radius: 5px; margin: 20px;"></div>
+
+                <!-- Formulario de gestión nutricional -->
+                <form action="../Php/planNutricional/procesar_plan_nutricional.php" method="POST">
+                    <label for="animal">Selecciona un animal:</label>
+                    <select id="animal" name="animal">
+                        <option value="Bovino">Bovino</option>
+                        <option value="Porcino">Porcino</option>
+                    </select>
+                
+                    <label for="dieta">Plan de dieta:</label>
+                    <textarea id="dieta" name="plan_dieta" rows="4" placeholder="Describe la dieta..."></textarea>
+                
+                    <label for="suplementos">Suplementos:</label>
+                    <input type="text" id="suplementos" name="suplementos" placeholder="Ej: Vitaminas, minerales...">
+                
+                    <button type="submit">Guardar Plan Nutricional</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- ✅ Script del mensaje -->
+    <script>
+        function obtenerParametro(nombre) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(nombre);
+        }
+
+        const mensaje = obtenerParametro('mensaje');
+        if (mensaje) {
+            const alerta = document.getElementById('mensaje-alerta');
+            alerta.textContent = decodeURIComponent(mensaje);
+            alerta.style.display = 'block';
+
+            // Ocultar después de 4 segundos
+            setTimeout(() => {
+                alerta.style.display = 'none';
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
