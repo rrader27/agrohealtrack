@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Nutricional</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div>
+        <!-- Barra lateral -->
+        <aside>
+            <h2>AGROHEALTRACK</h2>
+            <nav>
+                <a href="../Formularios/Plan_nutricional.html">Plan Nutricional</a>
+                <a href="../Pagina Principal/control_otros/Panel de  Control.html">Panel de Control</a>
+            </nav>
+        </aside>
+
+        <!-- Área principal -->
+        <main>
+            <section>
+                <h1>Control Nutricional</h1>
+                <p>Registra y monitorea el estado de salud de los animales.</p>
+                
+                <!-- Formulario de gestión de salud -->
+                <form>
+                    <label for="animal-salud">Selecciona un animal:</label>
+                    <select id="animal-salud" name="animal-salud">
+                        <option value="perro">Bovino</option>
+                        <option value="gato">Porcino</option>
+                    </select>
+
+                    <label for="diagnostico">Diagnóstico:</label>
+                    <textarea id="diagnostico" name="diagnostico" rows="4" placeholder="Describe el diagnóstico..."></textarea>
+
+                    <label for="tratamiento">Tratamiento:</label>
+                    <input type="text" id="tratamiento" name="tratamiento" placeholder="Ej: Medicamentos, terapias...">
+
+                    <button type="submit">Guardar Registro Nutricional</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

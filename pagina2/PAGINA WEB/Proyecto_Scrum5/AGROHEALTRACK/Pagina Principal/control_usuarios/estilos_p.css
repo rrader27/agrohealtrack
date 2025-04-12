@@ -1,0 +1,166 @@
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f4f4f4;
+        }
+
+        /* Contenedor principal */
+        div {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Barra lateral */
+        aside {
+            width: 250px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+            position: fixed;
+        }
+
+        aside h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ecf0f1;
+        }
+
+        aside nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        aside nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        aside nav a:hover {
+            background-color: #4CAF50;
+        }
+
+        /* Área principal */
+        main {
+            margin-left: 250px; /* Ajuste para la barra lateral */
+            flex-grow: 1;
+            padding: 20px;
+            background-color: white;
+            min-height: 100vh;
+        }
+
+        main section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        main h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        main img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+            }
+
+            aside nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            aside nav a {
+                margin: 5px;
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            main {
+                margin-left: 0;
+                padding: 10px;
+            }
+        }
+/* Estilos para formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
