@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Nutricional</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div>
+        <!-- Barra lateral -->
+        <aside>
+            <h2>AGROHEALTRACK</h2>
+            <nav>
+                <a href="../control_otros/Gestion_salud.html">Gestión de Salud</a>
+                <a href="../control_otros/Inicio.html">Panel de Control</a>
+            </nav>
+        </aside>
+
+        <!-- Área principal -->
+        <main>
+            <section>
+                <h1>Gestión Nutricional</h1>
+                <p>Aquí puedes gestionar la dieta y el plan nutricional de los animales.</p>
+                
+                <!-- Formulario de gestión nutricional -->
+                <form>
+                    <label for="animal">Selecciona un animal:</label>
+                    <select id="animal" name="animal">
+                        <option value="perro">Perro</option>
+                        <option value="gato">Gato</option>
+                        <option value="ave">Ave</option>
+                        <option value="roedor">Roedor</option>
+                    </select>
+
+                    <label for="dieta">Plan de dieta:</label>
+                    <textarea id="dieta" name="dieta" rows="4" placeholder="Describe la dieta..."></textarea>
+
+                    <label for="suplementos">Suplementos:</label>
+                    <input type="text" id="suplementos" name="suplementos" placeholder="Ej: Vitaminas, minerales...">
+
+                    <button type="submit">Guardar Plan Nutricional</button>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
